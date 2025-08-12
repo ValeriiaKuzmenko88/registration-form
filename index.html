@@ -1,76 +1,85 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Форма реєстрації користувача</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <form action="/submit" method="post" class="registration-form">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма реєстрації користувача</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form action="/submit" method="post" class="registration-form">
+      <fieldset>
+        <legend>Особисті дані</legend>
 
-    <fieldset>
-      <legend>Особисті дані</legend>
+        <label for="full-name">Повне ім’я</label>
+        <input type="text" id="full-name" name="fullName" required />
 
-      <label for="full-name">Повне ім’я</label>
-      <input type="text" id="full-name" name="fullName" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </fieldset>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-    </fieldset>
+      <fieldset>
+        <legend>Облікові дані</legend>
 
-    <fieldset>
-      <legend>Облікові дані</legend>
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" required />
 
-      <label for="password">Пароль</label>
-      <input type="password" id="password" name="password" required>
+        <label for="confirm-password">Пароль ще раз</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirmPassword"
+          required
+        />
+      </fieldset>
 
-      <label for="confirm-password">Пароль ще раз</label>
-      <input type="password" id="confirm-password" name="confirmPassword" required>
-    </fieldset>
+      <fieldset>
+        <legend>Профіль</legend>
 
-    <fieldset>
-      <legend>Профіль</legend>
+        <label>Стать</label>
+        <div class="gender-group">
+          <input type="radio" id="male" name="gender" value="male" required />
+          <label for="male">Чоловіча</label>
 
-      <label>Стать</label>
-      <div class="gender-group">
-        <input type="radio" id="male" name="gender" value="male" required>
-        <label for="male">Чоловіча</label>
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+            required
+          />
+          <label for="female">Жіноча</label>
+        </div>
 
-        <input type="radio" id="female" name="gender" value="female" required>
-        <label for="female">Жіноча</label>
-      </div>
+        <label for="age">Вік</label>
+        <input type="number" id="age" name="age" min="1" max="120" required />
 
-      <label for="age">Вік</label>
-      <input type="number" id="age" name="age" min="1" max="120" required>
+        <label for="course">Курс</label>
+        <select id="course" name="course" required>
+          <option value="" disabled selected>Оберіть курс</option>
+          <option value="front-end">Front-End</option>
+          <option value="back-end">Back-End</option>
+          <option value="pm">Project Management</option>
+          <option value="qa">QA Manual</option>
+        </select>
 
-      <label for="course">Курс</label>
-      <select id="course" name="course" required>
-        <option value="" disabled selected>Оберіть курс</option>
-        <option value="front-end">Front-End</option>
-        <option value="back-end">Back-End</option>
-        <option value="pm">Project Management</option>
-        <option value="qa">QA Manual</option>
-      </select>
+        <label for="address">Повна адреса проживання</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </fieldset>
 
-      <label for="address">Повна адреса проживання</label>
-      <textarea id="address" name="address" rows="3" required></textarea>
-    </fieldset>
+      <fieldset>
+        <legend>Погодження</legend>
 
-    <fieldset>
-      <legend>Погодження</legend>
+        <label class="checkbox-label">
+          <input type="checkbox" id="agree" name="agree" required />
+          Я погоджуюсь з обробкою персональних даних
+        </label>
 
-      <label class="checkbox-label">
-        <input type="checkbox" id="agree" name="agree" required>
-        Я погоджуюсь з обробкою персональних даних
-      </label>
-
-      <div class="form-actions">
-        <button type="reset" class="btn-reset">Очистити форму</button>
-        <button type="submit" class="btn-submit">Зареєструватися</button>
-      </div>
-    </fieldset>
-
-  </form>
-</body>
+        <div class="form-actions">
+          <button type="reset" class="btn-reset">Очистити форму</button>
+          <button type="submit" class="btn-submit">Зареєструватися</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
 </html>
